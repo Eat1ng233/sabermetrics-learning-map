@@ -47,3 +47,7 @@
 ## [2026-11-13] update | 網站加入輕量 Y2K 點綴
 - 摘要：在 80 年代像素風基礎上加入 Y2K 點綴：鉻金屬 Logo 與 ✦ 星光、頁首虹彩條、早期作業系統風格的視窗標題列（STAGE、工具、計算器、互動場景、文章內文）、主要行動按鈕改為亮面果凍膠囊，並新增薰衣草／嬰兒藍／泡泡糖粉三個輔助色（僅用於裝飾）。規範寫入 `AGENTS.md` 第七節。
 - 影響頁面：無 wiki 內容變更；更新 `AGENTS.md`、`site/build.mjs`、`site/assets/style.css`
+
+## [2026-11-13] update | 公開發布至 GitHub 與 GitHub Pages
+- 摘要：建立公開 repo `Eat1ng233/sabermetrics-learning-map`，以 GitHub Actions 由 `wiki/` 自動建置並部署網站至 https://eat1ng233.github.io/sabermetrics-learning-map/ 。原文 PDF（`raw/`）依使用者決定不上傳，改以網站「資料來源與版權」頁與每篇文章底部「原始出處」框標註 114 篇來源的作者、日期與原文連結；發布規範寫入 `AGENTS.md` 第八節。
+- 影響頁面：無 wiki 內容變更；新增 `.gitignore`、`README.md`、`.github/workflows/pages.yml`
