@@ -1,0 +1,15 @@
+# 系統與編輯器
+.DS_Store
+.obsidian/
+.claude/
+
+# 原始資料：受版權保護的原文 PDF 只留在本機，不上傳（見 AGENTS.md 第八節）
+raw/*
+!raw/README.md
+!raw/*/
+raw/*/*
+!raw/*/README.md
+
+# 網站建置產物與依賴（由 GitHub Actions 重新建置）
+site/node_modules/
+site/dist/

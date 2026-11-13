@@ -1,0 +1,14 @@
+{
+  "name": "sabermetrics-learning-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node serve.mjs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "katex": "^0.16.11",
+    "marked": "^12.0.2"
+  }
+}
