@@ -9,8 +9,9 @@ tags:
 sources:
   - "[[sources/2026-11-13-MLB-Statcast-Swing-Length]]"
   - "[[sources/2026-11-13-MLB-Statcast-Glossary-Overview]]"
+  - "[[sources/2010-02-18-FanGraphs-Plate-Discipline]]"
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-17
 status: active
 ---
 
@@ -39,6 +40,11 @@ status: active
 ## 限制與常見誤區
 - 長短無絕對好壞，是「接觸 vs. 力量」的取捨。
 
+## 與本壘板紀律指標的關係
+> [!warning] 定義差異：Whiff%（每次揮棒）vs. FanGraphs SwStr%（每球）
+> 本頁的 Whiff%（短揮棒 19%、長揮棒 30%）是「揮空 ÷ 揮棒次數」；FanGraphs 的 [[metrics/SwStr%|SwStr%]] 則是「揮空 ÷ 總投球數」，聯盟平均約 9.5%（來源：[[sources/2010-02-18-FanGraphs-Plate-Discipline]]）。兩者分母不同，數值不可直接比較；更多揮棒端指標見 [[concepts/Plate-Discipline|本壘板紀律]]。
+
 ## 參考來源
 - [[sources/2026-11-13-MLB-Statcast-Swing-Length]]
 - [[sources/2026-11-13-MLB-Statcast-Glossary-Overview]]
+- [[sources/2010-02-18-FanGraphs-Plate-Discipline]]

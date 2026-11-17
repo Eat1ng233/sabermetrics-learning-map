@@ -213,7 +213,7 @@ const blockCount = b => b.groups.reduce((n, g) => n + g.items.length, 0);
   const v = B('value');
   const stage3 = row(v.groups.map((g, i) => node(`m/value.html#g-${i}`, `3-${i + 1}`, g.title, g.items.map(m => short('metrics/' + m)).join('・'), 'c-value')));
   const stage4 = row(pg[3].items.map((p, i) => node(rel(url, urlOf('principles/' + p)), `4-${i + 1}`, names('principles/' + p).name, esc(defOf('principles/' + p)), 'c-principles')));
-  const tools = row([['hitter-calc', '🧮 打者計算器', 'AVG・OBP・wOBA・wRAA…'], ['pitcher-calc', '🧮 投手計算器', 'ERA・FIP・xFIP・LOB%…'], ['barrel-chart', '⚾ Barrel 擊球場景', '初速 × 仰角 → 完美擊球？'], ['blast-chart', '🏏 Blast 揮棒場景', '揮棒速度 × 打正率']]
+  const tools = row([['hitter-calc', '🧮 打者計算器', 'AVG・OBP・wOBA・wRAA…'], ['pitcher-calc', '🧮 投手計算器', 'ERA・FIP・xFIP・LOB%…'], ['pd-calc', '🧮 本壘板紀律計算器', 'O-Swing%・Contact%・SwStr%…'], ['barrel-chart', '⚾ Barrel 擊球場景', '初速 × 仰角 → 完美擊球？'], ['blast-chart', '🏏 Blast 揮棒場景', '揮棒速度 × 打正率']]
     .map(([id, t, d], i) => node(`tools.html#${id}`, `T${i + 1}`, t, d, 'c-tools')));
   const body = `
 <section class="hero">
@@ -287,6 +287,7 @@ ${b.cross.length ? `<section class="section group"><h2>投打通用 <small>主�
 <p class="lead">計算器只收錄知識庫中有明確公式的指標；預設常數取自對應頁面，可自行修改。</p>
 ${sec('hitter-calc', '🧮 打者計算器', '輸入打者的基本數據（單季或任意區間），即時算出比率與線性權重指標。', WIDGETS['hitter-calc'])}
 ${sec('pitcher-calc', '🧮 投手計算器', '輸入投手的基本數據；局數可用 180.2 表示 180⅔ 局。', WIDGETS['pitcher-calc'])}
+${sec('pd-calc', '🧮 本壘板紀律計算器', '輸入好球帶內外的投球、揮棒與擊中次數，算出九項本壘板紀律指標並與聯盟平均比較（投手視角時，數字代表對手打者的行為）。', WIDGETS['pd-calc'])}
 ${sec('barrel-chart', '⚾ Barrel 擊球場景', '在球場上拖動擊球方向、調整初速，按「揮棒」看球怎麼飛，以及它是不是 Barrel。', WIDGETS['barrel-chart'])}
 ${sec('blast-chart', '🏏 Blast 揮棒場景', '調整揮棒速度與擊球點，看這一棒是否既快又正，成為 Blast。', WIDGETS['blast-chart'])}`;
   out(url, layout(url, '工具', body, { active: url }));

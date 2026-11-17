@@ -3,7 +3,7 @@
 > 此檔案為知識庫的**內容導向總目錄**。每次執行 `ingest`、將問答沉澱為頁面或進行 `lint` 時，皆會同步更新此目錄。查詢問題時，Agent 會優先閱讀此檔案以定位相關頁面。
 
 ## 總覽與學習地圖（Overview & Synthesis）
-- [[overview|賽伯計量學學習總覽]] — 系統性整理打擊、投球、守備、跑壘與綜合評價（WAR）的學習脈絡與知識地圖。（來源數：114，更新：2026-11-13）
+- [[overview|賽伯計量學學習總覽]] — 系統性整理打擊、投球、守備、跑壘與綜合評價（WAR）的學習脈絡與知識地圖。（來源數：115，更新：2026-11-17）
 
 ## 基礎原理與計量邏輯（Principles）
 - [[principles/README|Principles 總覽]] — 整理 FanGraphs Sabermetrics Library 四大計量邏輯支柱（訊號與雜訊、價值量化、環境校正、時間預測）。（來源數：14，更新：2026-11-12）
@@ -31,13 +31,19 @@
 - [[metrics/ISO|ISO（純長打率）]] — 計算 SLG 減 AVG，含 550 PA 穩定門檻與評級區間。（來源數：2，更新：2026-11-12）
 - [[metrics/OPS|OPS（整體攻擊指數）]] — OBP + SLG，含評級區間與 1:1 權重（相對於 ~1.8x 真實權重）的數學缺陷。（來源數：2，更新：2026-11-12）
 - [[metrics/OPS+|OPS+]] — 經球場與聯盟環境標準化的 OPS（100 為平均，Baseball-Reference 提供）。（來源數：1，更新：2026-11-12）
-- [[metrics/BB%|BB%（保送率）]] — 打者（PA）與投手（BF）保送頻率，含評級區間與 120 PA 穩定門檻。（來源數：3，更新：2026-11-12）
-- [[metrics/K%|K%（三振率）]] — 打者（PA）與投手（BF）三振頻率，含評級區間與 60 PA 極速穩定門檻。（來源數：3，更新：2026-11-12）
+- [[metrics/BB%|BB%（保送率）]] — 打者（PA）與投手（BF）保送頻率，含評級區間與 120 PA 穩定門檻。（來源數：4，更新：2026-11-17）
+- [[metrics/K%|K%（三振率）]] — 打者（PA）與投手（BF）三振頻率，含評級區間與 60 PA 極速穩定門檻。（來源數：4，更新：2026-11-17）
 - [[metrics/BB-K|BB/K（保送三振比）]] — 四壞球保送與被三振次數的比值。（來源數：1，更新：2026-11-12）
 - [[metrics/wOBA|wOBA（Weighted On-Base Average）]] — Tom Tango 創立，依實際得分價值加權的打擊指標，含 2013 權重公式與評級區間。（來源數：3，更新：2026-11-13）
 - [[metrics/wRAA|wRAA（Weighted Runs Above Average）]] — 將 wOBA 換算為高於聯盟平均的累積得分數（10 wRAA ≈ +1 勝）。（來源數：2，更新：2026-11-12）
 - [[metrics/wRC+|wRC+（Weighted Runs Created Plus）]] — 結合 wOBA 權重並經球場與聯盟環境校正的最全面打擊率值指標。（來源數：1，更新：2026-11-12）
 - [[metrics/Off|Off（綜合進攻價值）]] — 結合球場校正後打擊得分與 BsR 的進攻總得分貢獻（WAR 積木）。（來源數：2，更新：2026-11-12）
+- [[metrics/O-Swing%|O-Swing%（好球帶外揮棒率）]] — 對好球帶外投球的出棒比例（Chase Rate，平均約 30%），衡量追打壞球傾向。（來源數：1，更新：2026-11-17）
+- [[metrics/Z-Swing%|Z-Swing%（好球帶內揮棒率）]] — 對好球帶內投球的出棒比例（平均約 65%），衡量是否積極攻擊好球。（來源數：1，更新：2026-11-17）
+- [[metrics/Swing%|Swing%（總揮棒率）]] — 所有投球中出棒的比例（平均約 46%），整體積極程度。（來源數：1，更新：2026-11-17）
+- [[metrics/O-Contact%|O-Contact%（好球帶外擊中率）]] — 揮擊帶外球時碰到球的比例（平均約 66%），碰到不等於有價值。（來源數：1，更新：2026-11-17）
+- [[metrics/Z-Contact%|Z-Contact%（好球帶內擊中率）]] — 揮擊帶內球時碰到球的比例（平均約 87%）。（來源數：1，更新：2026-11-17）
+- [[metrics/Contact%|Contact%（總擊中率）]] — 所有揮棒中碰到球的比例（平均約 80%），1 − Contact% 即每次揮棒的 whiff rate。（來源數：1，更新：2026-11-17）
 - [[metrics/BABIP|BABIP（場內球打擊率）]] — 場內球形成安打比率，含打者 800 BIP 與投手 2,000 BIP 穩定門檻。（來源數：4，更新：2026-11-13）
 - [[metrics/GB%|GB%（滾地球比例）]] — 場內球中滾地球比例（平均 ~44%），長打極少。（來源數：2，更新：2026-11-12）
 - [[metrics/LD%|LD%（平飛球比例）]] — 場內球中平飛球比例（平均 ~21%），產值最高但需約一年半穩定。（來源數：3，更新：2026-11-13）
@@ -61,6 +67,9 @@
 - [[metrics/SIERA|SIERA（技巧交互防禦率）]] — 納入三振、保送與擊球型態非線性交互作用的球場校正 ERA 估計指標。（來源數：1，更新：2026-11-12）
 - [[metrics/WHIP|WHIP（每局被上壘率）]] — `(BB + H) / IP`，簡單入門但以 IP 為分母且等價看待保送與全壘打。（來源數：1，更新：2026-11-12）
 - [[metrics/LOB%|LOB%（殘壘率）]] — 投手將上壘者留在壘包的比例（平均 ~70–72%），偏離值易向均值回歸。（來源數：1，更新：2026-11-12）
+- [[metrics/Zone%|Zone%（好球帶投球率）]] — 投進好球帶的比例（平均約 45%），對好球帶定義的差異特別敏感。（來源數：1，更新：2026-11-17）
+- [[metrics/F-Strike%|F-Strike%（首球好球率）]] — 首球好球數 ÷ 打席數（平均約 59%），搶先取得球數優勢。（來源數：1，更新：2026-11-17）
+- [[metrics/SwStr%|SwStr%（揮空率）]] — 揮空 ÷ 總投球數（平均約 9.5%），評估投手特別重要；勿與每次揮棒的 whiff rate 混淆。（來源數：1，更新：2026-11-17）
 - [[metrics/K-9|K/9（每九局三振數）]] — 每 9 局三振數，精確比較時遜於 K%。（來源數：1，更新：2026-11-12）
 - [[metrics/BB-9|BB/9（每九局保送數）]] — 每 9 局保送數，精確比較時遜於 BB%。（來源數：1，更新：2026-11-12）
 - [[metrics/SD|SD（Shutdowns）]] — 後援投手單場 `WPA ≥ +0.06` 的強勢關門次數（取代救援/中繼成功）。（來源數：1，更新：2026-11-12）
@@ -108,7 +117,7 @@
 - [[metrics/Fast-Swing-Rate|Fast-swing Rate（快速揮棒率）]] — 揮棒速度 ≥75 mph 的揮棒比例；2024 年初 23% 的揮棒為快速揮棒。（來源數：2，更新：2026-11-13）
 - [[metrics/Squared-Up-Rate|Squared-up Rate（打正率）]] — 實際 EV 佔「依揮棒速度與球速理論最大 EV」的比例；≥80% 為 squared-up。（來源數：2，更新：2026-11-13）
 - [[metrics/Blasts|Blasts（強力正中擊球）]] — Squared-up% ×100 + 揮棒速度 ≥164 的揮棒；2024 Blast 擊球 wOBA .727 vs 非 Blast .225。（來源數：2，更新：2026-11-13）
-- [[metrics/Swing-Length|Swing Length（揮棒長度）]] — 棒頭自追蹤開始至擊球點在三維空間的移動總長；MLB 平均 7.3 呎，短揮棒多接觸、長揮棒多長打。（來源數：2，更新：2026-11-13）
+- [[metrics/Swing-Length|Swing Length（揮棒長度）]] — 棒頭自追蹤開始至擊球點在三維空間的移動總長；MLB 平均 7.3 呎，短揮棒多接觸、長揮棒多長打。（來源數：3，更新：2026-11-17）
 - [[metrics/Swing-Path-Tilt|Swing Path / Tilt（揮棒路徑傾角）]] — 接觸前揮棒平面相對地面的垂直角度；MLB 平均約 32°，範圍約 20°（平）至 50°（陡）。（來源數：2，更新：2026-11-13）
 - [[metrics/Attack-Angle|Attack Angle（攻擊角度）]] — 擊球瞬間球棒甜蜜點的垂直移動角度；MLB 平均約 10°，理想區間 5–20°。（來源數：2，更新：2026-11-13）
 - [[metrics/Ideal-Attack-Angle|Ideal Attack Angle Rate（理想攻擊角度率）]] — 競爭性揮棒中攻擊角落在 5°–20° 的比例；2024 Bregman 69% 居前。（來源數：2，更新：2026-11-13）
@@ -156,7 +165,7 @@
 
 ## 核心概念與理論（Concepts）
 - [[concepts/Batted-Ball-Profile|擊球型態與落點分布（Batted Ball）]] — 整合軌跡、方向、擊球強度與特殊安打之完整框架。（來源數：7，更新：2026-11-13）
-- [[concepts/Plate-Discipline|本壘板紀律（Plate Discipline）]] — 彙整 BIS 與 PITCHf/x 的出棒選擇、擊球接觸率與投球節奏指標。（來源數：2，更新：2026-11-13）
+- [[concepts/Plate-Discipline|本壘板紀律（Plate Discipline）]] — 九項出棒、擊中與揮空指標的總覽：聯盟平均表、BIS vs. PITCHf/x、SwStr% vs. whiff rate 與使用誤區。（來源數：3，更新：2026-11-17）
 - [[concepts/Defensive-Metrics-Overview|守備數據核心理論（Defense Overview）]] — 剖析失誤與守備率盲點，並說明「接殺難度 × 失分價值」邏輯。（來源數：4，更新：2026-11-13）
 - [[concepts/Catcher-Defense|捕手守備評估（Catcher Defense）]] — 拆解阻殺（rSB）、擋球（RPP）、偷好球（Framing, 頂尖 +15~25 分）與配球黑盒。（來源數：4，更新：2026-11-13）
 - [[concepts/Pitch-Type-Linear-Weights|球種線性權重（Pitch Values）]] — 依球數得分期望變化歸屬各球種價值（描述性而非預測性，跨季相關 <0.25）。（來源數：2，更新：2026-11-12）
@@ -175,10 +184,10 @@
 - [[comparisons/PitchingBot-vs-Pitching+|PitchingBot 與 Stuff+/Location+/Pitching+ 比較]] — 對比 FanGraphs 兩大 Statcast 投球建模系統的量表、架構差異與共同盲點。（來源數：2，更新：2026-11-12）
 - [[comparisons/fWAR-vs-rWAR-vs-WARP|fWAR、rWAR 與 WARP 比較]] — 對比 FanGraphs、Baseball-Reference 與 Baseball Prospectus 三大 WAR 系統的守備與投手哲學差異。（來源數：1，更新：2026-11-12）
 
-## 來源摘要（Sources，共 114 篇）
+## 來源摘要（Sources，共 115 篇）
 - **基礎原理與計量邏輯（Principles）**：[[sources/2011-01-23-FanGraphs-DIPS|DIPS]] / [[sources/2010-02-16-FanGraphs-Regression-Toward-the-Mean|Regression toward the Mean]] / [[sources/2010-02-26-FanGraphs-Replacement-Level|Replacement Level]] / [[sources/2010-02-18-FanGraphs-Sample-Size|Sample Size]] / [[sources/2010-02-27-FanGraphs-Splits|Splits]] / [[sources/2010-02-25-FanGraphs-Projection-Systems|Projection Systems]] / [[sources/2010-02-25-FanGraphs-Linear-Weights|Linear Weights]] / [[sources/2010-02-25-FanGraphs-Counting-vs-Rate-Stats|Counting vs. Rate]] / [[sources/2010-02-27-FanGraphs-Park-Factors|Park Factors]] / [[sources/2010-02-26-FanGraphs-Positional-Adjustment|Positional Adjustment]] / [[sources/2010-02-27-FanGraphs-Aging-Curve|Aging Curve]] / [[sources/2010-02-27-FanGraphs-League-Equivalencies|League Equivalencies]] / [[sources/2010-02-26-FanGraphs-Pythagorean-Win-Loss|Pythagorean Win-Loss]] / [[sources/2011-01-23-FanGraphs-Luck|Luck]]
 - [[sources/2014-10-30-FanGraphs-Complete-List-Offense|Complete List (Offense)]] / [[sources/2010-02-16-FanGraphs-OBP|OBP]] / [[sources/2010-02-16-FanGraphs-OPS-and-OPS-Plus|OPS and OPS+]] / [[sources/2015-03-12-FanGraphs-Defense-Overview|Defense Overview]] / [[sources/2023-03-10-FanGraphs-PitchingBot-Primer|PitchingBot Primer]] / [[sources/2023-03-10-FanGraphs-Stuff-Location-Pitching-Plus-Primer|Stuff+/Location+/Pitching+ Primer]]
-- **打擊與跑壘**：[[sources/2010-02-15-FanGraphs-BABIP|BABIP]] / [[sources/2015-05-17-FanGraphs-Batted-Ball-Direction|Batted Ball Direction]] / [[sources/2014-09-11-FanGraphs-BsR|BsR]] / [[sources/2010-02-17-FanGraphs-Batted-Ball-Types|GB%, LD%, FB%]] / [[sources/2010-02-19-FanGraphs-HR-FB|HR/FB]] / [[sources/2010-02-15-FanGraphs-ISO|ISO]] / [[sources/2010-02-19-FanGraphs-K-and-BB-Percent|K% and BB%]] / [[sources/2014-08-28-FanGraphs-Off|Off]] / [[sources/2015-05-10-FanGraphs-Quality-of-Contact|Quality of Contact]] / [[sources/2010-02-16-FanGraphs-Spd|Spd]] / [[sources/2012-03-22-FanGraphs-UBR|UBR]] / [[sources/2015-03-26-FanGraphs-wGDP|wGDP]] / [[sources/2010-02-15-FanGraphs-wOBA|wOBA]] / [[sources/2010-02-16-FanGraphs-wRAA|wRAA]] / [[sources/2013-02-10-FanGraphs-wSB|wSB]]
+- **打擊與跑壘**：[[sources/2010-02-15-FanGraphs-BABIP|BABIP]] / [[sources/2015-05-17-FanGraphs-Batted-Ball-Direction|Batted Ball Direction]] / [[sources/2014-09-11-FanGraphs-BsR|BsR]] / [[sources/2010-02-17-FanGraphs-Batted-Ball-Types|GB%, LD%, FB%]] / [[sources/2010-02-19-FanGraphs-HR-FB|HR/FB]] / [[sources/2010-02-15-FanGraphs-ISO|ISO]] / [[sources/2010-02-19-FanGraphs-K-and-BB-Percent|K% and BB%]] / [[sources/2014-08-28-FanGraphs-Off|Off]] / [[sources/2015-05-10-FanGraphs-Quality-of-Contact|Quality of Contact]] / [[sources/2010-02-16-FanGraphs-Spd|Spd]] / [[sources/2012-03-22-FanGraphs-UBR|UBR]] / [[sources/2015-03-26-FanGraphs-wGDP|wGDP]] / [[sources/2010-02-15-FanGraphs-wOBA|wOBA]] / [[sources/2010-02-16-FanGraphs-wRAA|wRAA]] / [[sources/2013-02-10-FanGraphs-wSB|wSB]] / [[sources/2010-02-18-FanGraphs-Plate-Discipline|Plate Discipline]]
 - **投球**：[[sources/2010-02-16-FanGraphs-ERA|ERA]] / [[sources/2011-04-08-FanGraphs-ERA-FIP-xFIP-Minus|ERA-/FIP-/xFIP-]] / [[sources/2010-02-15-FanGraphs-FIP|FIP]] / [[sources/2010-02-17-FanGraphs-LOB-Percent|LOB%]] / [[sources/2015-05-25-FanGraphs-Pace|Pace]] / [[sources/2012-03-01-FanGraphs-Pitch-Type-Linear-Weights|Pitch Type Linear Weights]] / [[sources/2011-04-06-FanGraphs-SD-MD|SD/MD]] / [[sources/2011-07-27-FanGraphs-SIERA|SIERA]] / [[sources/2010-02-19-FanGraphs-Pitching-Rate-Stats|Strikeout and Walk Rates]] / [[sources/2010-02-17-FanGraphs-WHIP|WHIP]] / [[sources/2010-02-15-FanGraphs-xFIP|xFIP]]
 - **守備**：[[sources/2012-03-22-FanGraphs-Catcher-Defense|Catcher Defense]] / [[sources/2010-02-15-FanGraphs-DRS|DRS]] / [[sources/2014-09-04-FanGraphs-Def|Def]] / [[sources/2020-03-17-FanGraphs-DRS-2020-Update|DRS 2020 Update]] / [[sources/2011-01-23-FanGraphs-FSR|FSR]] / [[sources/2015-05-31-FanGraphs-Inside-Edge-Fielding|Inside Edge Fielding]] / [[sources/2011-01-23-FanGraphs-RZR|RZR]] / [[sources/2011-01-24-FanGraphs-TZ-TZL|TZ/TZL]] / [[sources/2010-02-15-FanGraphs-UZR|UZR]]
 - **勝率與關鍵度**：[[sources/2010-02-17-FanGraphs-Clutch|Clutch]] / [[sources/2010-02-17-FanGraphs-LI|LI]] / [[sources/2014-07-30-FanGraphs-RE24|RE24]] / [[sources/2010-02-16-FanGraphs-WPA|WPA]] / [[sources/2010-02-17-FanGraphs-WPA-LI|WPA/LI]] / [[sources/2010-02-17-FanGraphs-Win-Expectancy|Win Expectancy]]

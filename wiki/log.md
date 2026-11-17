@@ -51,3 +51,7 @@
 ## [2026-11-13] update | 公開發布至 GitHub 與 GitHub Pages
 - 摘要：建立公開 repo `Eat1ng233/sabermetrics-learning-map`，以 GitHub Actions 由 `wiki/` 自動建置並部署網站至 https://eat1ng233.github.io/sabermetrics-learning-map/ 。原文 PDF（`raw/`）依使用者決定不上傳，改以網站「資料來源與版權」頁與每篇文章底部「原始出處」框標註 114 篇來源的作者、日期與原文連結；發布規範寫入 `AGENTS.md` 第八節。
 - 影響頁面：無 wiki 內容變更；新增 `.gitignore`、`README.md`、`.github/workflows/pages.yml`
+
+## [2026-11-17] ingest | FanGraphs 本壘板紀律專題（Plate Discipline）
+- 摘要：抓取 `https://library.fangraphs.com/offense/plate-discipline/`（Piper Slowinski, 2010-02-18），以文章本文存成 `raw/articles/Plate Discipline (O-Swing%, Z-Swing%, etc.) _ Sabermetrics Library.pdf`。依使用者決定：九項指標各建獨立頁並依投打拆分（O-Swing%／Z-Swing%／Swing%／O-Contact%／Z-Contact%／Contact% 歸進攻「本壘板紀律」組，Zone%／F-Strike%／SwStr% 歸投球「本壘板紀律（投手視角）」組，雙向交叉列出）；強調聯盟平均（BIS）、SwStr%（每球）vs. whiff rate（每次揮棒）定義差異、使用誤區，並新增網站「本壘板紀律計算器」。重寫 `Plate-Discipline` 概念頁為總覽，於 Swing Length 頁標註 Whiff% 口徑差異，K%／BB% 頁補上對應指標。
+- 影響頁面：`[[sources/2010-02-18-FanGraphs-Plate-Discipline]]`, `[[metrics/O-Swing%]]`, `[[metrics/Z-Swing%]]`, `[[metrics/Swing%]]`, `[[metrics/O-Contact%]]`, `[[metrics/Z-Contact%]]`, `[[metrics/Contact%]]`, `[[metrics/Zone%]]`, `[[metrics/F-Strike%]]`, `[[metrics/SwStr%]]`, `[[concepts/Plate-Discipline]]`, `[[metrics/Swing-Length]]`, `[[metrics/K%]]`, `[[metrics/BB%]]`, `[[overview]]`, `[[index]]`；網站：`site/taxonomy.mjs`、`site/build.mjs`、`site/assets/app.js`

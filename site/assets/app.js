@@ -624,7 +624,56 @@
     return { sync: sync };
   }
 
-  var W = { 'hitter-calc': hitter, 'pitcher-calc': pitcher, 'barrel-chart': barrel, 'blast-chart': blast };
+
+  // ---------- plate discipline calculator ----------
+  // 定義與聯盟平均（BIS）取自 Plate Discipline 頁（FanGraphs, 2010-02-18）。
+  var PD_FIELDS = [['P', '總投球數', 2400], ['ZP', '好球帶內投球數', 1080], ['ZS', '帶內揮棒次數', 715], ['OS', '帶外揮棒次數', 330],
+    ['ZC', '帶內碰到球（含界外）', 636], ['OC', '帶外碰到球（含界外）', 211], ['PA', '打席數 PA', 600], ['FS', '首球好球數', 340]];
+  function pdCalc(box, focus) {
+    var form = el('<form autocomplete="off">' + inputs(PD_FIELDS) +
+      '<div class="calc-actions"><button type="button" class="btn reset">恢復範例數據</button><button type="button" class="btn clear">清空</button></div>' +
+      '<div class="out"></div></form>').firstChild;
+    box.appendChild(form);
+    var save = persist(form, 'pd');
+    function diff(v, avg) {
+      if (!isFinite(v)) return '';
+      var d = (v - avg) * 100, cls = Math.abs(d) < 2 ? 't3' : (d > 0 ? 't1' : 't5');
+      return '<span class="tier ' + cls + '">平均 ' + (avg * 100).toFixed(avg < 0.1 ? 1 : 0) + '%｜' + (d >= 0 ? '+' : '') + d.toFixed(1) + ' pp</span>';
+    }
+    function calc() {
+      var g = function (n) { return num(form, n); };
+      var P = g('P'), ZP = g('ZP'), ZS = g('ZS'), OS = g('OS'), ZC = g('ZC'), OC = g('OC'), PA = g('PA'), FS = g('FS');
+      var OP = P - ZP, SW = ZS + OS, CT = ZC + OC, MISS = SW - CT;
+      var out = form.querySelector('.out');
+      var err = !(P > 0) ? '請輸入總投球數。'
+        : !(ZP >= 0 && ZP <= P) ? '好球帶內投球數需介於 0 與總投球數之間。'
+        : (ZS > ZP || OS > OP) ? '揮棒次數不可超過對應區域的投球數。'
+        : (ZC > ZS || OC > OS) ? '碰到球的次數不可超過對應區域的揮棒次數。'
+        : (isFinite(FS) && isFinite(PA) && FS > PA) ? '首球好球數不可超過打席數。' : '';
+      if (err) { out.innerHTML = '<p class="muted">' + err + '</p>'; save(); return; }
+      var rows = [
+        { key: 'O-Swing%', name: 'O-Swing%', v: OS / OP, avg: .30, f: '帶外揮棒 / 帶外投球' },
+        { key: 'Z-Swing%', name: 'Z-Swing%', v: ZS / ZP, avg: .65, f: '帶內揮棒 / 帶內投球' },
+        { key: 'Swing%', name: 'Swing%', v: SW / P, avg: .46, f: '揮棒 / 總投球' },
+        { key: 'O-Contact%', name: 'O-Contact%', v: OC / OS, avg: .66, f: '帶外碰到球 / 帶外揮棒' },
+        { key: 'Z-Contact%', name: 'Z-Contact%', v: ZC / ZS, avg: .87, f: '帶內碰到球 / 帶內揮棒' },
+        { key: 'Contact%', name: 'Contact%', v: CT / SW, avg: .80, f: '碰到球 / 揮棒' },
+        { key: 'Zone%', name: 'Zone%', v: ZP / P, avg: .45, f: '帶內投球 / 總投球' },
+        { key: 'F-Strike%', name: 'F-Strike%', v: FS / PA, avg: .59, f: '首球好球 / 打席' },
+        { key: 'SwStr%', name: 'SwStr%', v: MISS / P, avg: .095, f: '揮空 / 總投球（每球）' }
+      ].map(function (r) { return { key: r.key, name: r.name, val: fmt(r.v, 'pct'), tier: diff(r.v, r.avg), f: r.f }; });
+      rows.push({ key: 'SwStr%', name: 'Whiff rate（補充）', val: fmt(MISS / SW, 'pct'), tier: '<span class="muted">每次揮棒口徑，勿與 SwStr% 混淆</span>', f: '揮空 / 揮棒 = 1 − Contact%' });
+      out.innerHTML = resultTable(rows, focus).replace('<th>判讀</th>', '<th>與聯盟平均比較</th>') +
+        '<p class="muted">揮空 = 揮棒 − 碰到球 = ' + MISS + ' 次。聯盟平均為 FanGraphs 以 BIS 資料估計、逐年變動；本壘板紀律<strong>沒有理想值</strong>，綠／紅只代表高於／低於平均，不代表好壞（例如投手的 SwStr% 越高越好，打者則相反）。</p>';
+      save();
+    }
+    form.addEventListener('input', calc);
+    form.querySelector('.reset').addEventListener('click', resetBtn(form, PD_FIELDS, calc));
+    form.querySelector('.clear').addEventListener('click', function () { PD_FIELDS.forEach(function (f) { form.querySelector('[name="' + f[0] + '"]').value = ''; }); calc(); });
+    calc();
+  }
+
+  var W = { 'hitter-calc': hitter, 'pitcher-calc': pitcher, 'pd-calc': pdCalc, 'barrel-chart': barrel, 'blast-chart': blast };
   document.querySelectorAll('.widget[data-widget]').forEach(function (box) {
     var f = W[box.dataset.widget]; if (f) f(box, box.dataset.focus);
   });

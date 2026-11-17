@@ -7,14 +7,15 @@ tags:
 sources:
   - "[[sources/2014-10-30-FanGraphs-Complete-List-Offense]]"
   - "[[sources/2026-11-13-MLB-Statcast-Glossary-Overview]]"
+  - "[[sources/2010-02-18-FanGraphs-Plate-Discipline]]"
 created: 2026-11-12
-updated: 2026-11-13
+updated: 2026-11-17
 status: active
 ---
 
 # 賽伯計量學（Sabermetrics）學習總覽
 
-這份頁面是整個知識庫的**知識地圖**，目前已匯入 **114 篇**來源：67 篇 FanGraphs Sabermetrics Library 核心文章（基礎計量原理、打擊、投球、守備、跑壘、勝率期望值與 WAR 綜合價值體系），以及 47 篇 MLB.com 官方 Statcast 詞彙表（追蹤數據時代的物理量測與期望值指標）。
+這份頁面是整個知識庫的**知識地圖**，目前已匯入 **115 篇**來源：68 篇 FanGraphs Sabermetrics Library 核心文章（基礎計量原理、打擊、投球、守備、跑壘、勝率期望值與 WAR 綜合價值體系），以及 47 篇 MLB.com 官方 Statcast 詞彙表（追蹤數據時代的物理量測與期望值指標）。
 
 > **兩大資料典範**：FanGraphs 指標多以「**結果**」計價（線性權重、區塊式守備），[[entities/Statcast|Statcast]] 則量測「**過程**」（擊球初速、接殺難度、揮棒速度）。學習時建議成對對照，例如 [[metrics/wOBA|wOBA]] ↔ [[metrics/xwOBA|xwOBA]]、[[metrics/FIP|FIP]] ↔ [[metrics/xERA|xERA]]、[[metrics/UZR|UZR]] ↔ [[metrics/OAA|OAA]]、[[metrics/Spd|Spd]] ↔ [[metrics/Sprint-Speed|Sprint Speed]]。
 
@@ -37,7 +38,7 @@ status: active
 - **傳統與基礎三圍**：[[metrics/AVG|AVG]]、[[metrics/OBP|OBP]]、[[metrics/SLG|SLG]]、[[metrics/ISO|ISO]]、[[metrics/OPS|OPS]]、[[metrics/OPS+|OPS+]]、[[metrics/BB%|BB%]]、[[metrics/K%|K%]]、[[metrics/BB-K|BB/K]]
 - **線性權重與綜合進攻**：[[metrics/wOBA|wOBA]] → [[metrics/wRAA|wRAA]] → [[metrics/wRC+|wRC+]] → [[metrics/Off|Off]]
 - **擊球型態與品質**：[[metrics/BABIP|BABIP]]、[[concepts/Batted-Ball-Profile|擊球型態總覽]]（[[metrics/GB%|GB%]]、[[metrics/LD%|LD%]]、[[metrics/FB%|FB%]]、[[metrics/IFFB%|IFFB%]]、[[metrics/HR-FB|HR/FB]]、[[metrics/Pull%|Pull%]]、[[metrics/Cent%|Cent%]]、[[metrics/Oppo%|Oppo%]]、[[metrics/Soft%|Soft%]]、[[metrics/Med%|Med%]]、[[metrics/Hard%|Hard%]]）
-- **本壘板紀律**：[[concepts/Plate-Discipline|本壘板紀律（O-Swing%、Z-Swing%、Contact%、SwStr%）]]
+- **本壘板紀律**：[[concepts/Plate-Discipline|本壘板紀律總覽]] → 出棒選擇 [[metrics/O-Swing%|O-Swing%]]、[[metrics/Z-Swing%|Z-Swing%]]、[[metrics/Swing%|Swing%]]；擊中能力 [[metrics/O-Contact%|O-Contact%]]、[[metrics/Z-Contact%|Z-Contact%]]、[[metrics/Contact%|Contact%]]；投手視角 [[metrics/Zone%|Zone%]]、[[metrics/F-Strike%|F-Strike%]]、[[metrics/SwStr%|SwStr%]]
 - **Statcast 擊球品質與預期數據**：[[metrics/Exit-Velocity|Exit Velocity]]、[[metrics/Launch-Angle|Launch Angle]]、[[metrics/Hard-Hit-Rate|Hard-hit Rate]]、[[metrics/Sweet-Spot|Sweet Spot%]] → [[metrics/Barrel|Barrel]]；[[metrics/xBA|xBA]]、[[metrics/xSLG|xSLG]]、[[metrics/xwOBA|xwOBA]]；距離：[[metrics/Hit-Distance|Hit Distance]]、[[metrics/Projected-HR-Distance|HR-DIS]]（分母：[[metrics/BBE|BBE]]）
 - **Statcast 揮棒追蹤**：[[concepts/Bat-Tracking|Bat Tracking 指標地圖]] → [[metrics/Bat-Speed|Bat Speed]]、[[metrics/Fast-Swing-Rate|Fast-swing Rate]]、[[metrics/Squared-Up-Rate|Squared-up Rate]]、[[metrics/Blasts|Blasts]]、[[metrics/Swing-Length|Swing Length]]、[[metrics/Swing-Path-Tilt|Swing Path]]、[[metrics/Attack-Angle|Attack Angle]]、[[metrics/Ideal-Attack-Angle|Ideal Attack Angle]]、[[metrics/Attack-Direction|Attack Direction]]、[[metrics/Intercept-Point|Intercept Point]]、[[metrics/Batting-Stance|Batting Stance]]
 

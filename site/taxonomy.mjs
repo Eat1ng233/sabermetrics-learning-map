@@ -13,25 +13,27 @@ export const METRIC_BLOCKS = [
     id: 'pitching', title: '投球', desc: '評估投手壓制得分的能力：從防禦率到守備獨立指標，再到 Statcast 球路物理與投球模型。',
     groups: [
       { title: '傳統與比率', items: ['ERA', 'WHIP', 'K-9', 'BB-9', 'LOB%', 'Pace'] },
+      { title: '本壘板紀律（投手視角）', items: ['Zone%', 'F-Strike%', 'SwStr%'] },
       { title: 'ERA 估計器與環境校正', items: ['FIP', 'xFIP', 'SIERA', 'xERA', 'HR-FB', 'ERA-', 'FIP-', 'xFIP-'] },
       { title: '失分拆解與牛棚', items: ['FDP', 'SD', 'MD'] },
       { title: '投球品質模型', items: ['Stuff+', 'Location+', 'Pitching+', 'PitchingBot'] },
       { title: 'Statcast 投球追蹤', items: ['Velocity', 'Perceived-Velocity', 'Extension', 'Spin-Rate', 'Active-Spin', 'Pitch-Movement', 'PutAway%', 'Swords', 'Pitch-Tempo'] },
     ],
-    cross: ['K%', 'BB%', 'BABIP', 'GB%', 'LD%', 'FB%', 'IFFB%', 'Soft%', 'Med%', 'Hard%', 'Exit-Velocity', 'Launch-Angle', 'Hard-Hit-Rate', 'Barrel', 'xBA', 'xSLG', 'xwOBA'],
-    further: ['concepts/Pitch-Type-Linear-Weights', 'comparisons/PitchingBot-vs-Pitching+', 'principles/DIPS'],
+    cross: ['O-Swing%', 'Z-Swing%', 'Swing%', 'O-Contact%', 'Z-Contact%', 'Contact%', 'K%', 'BB%', 'BABIP', 'GB%', 'LD%', 'FB%', 'IFFB%', 'Soft%', 'Med%', 'Hard%', 'Exit-Velocity', 'Launch-Angle', 'Hard-Hit-Rate', 'Barrel', 'xBA', 'xSLG', 'xwOBA'],
+    further: ['concepts/Plate-Discipline', 'concepts/Pitch-Type-Linear-Weights', 'comparisons/PitchingBot-vs-Pitching+', 'principles/DIPS'],
   },
   {
     id: 'offense', title: '進攻', desc: '評估打者與跑者創造得分的能力：從打擊三圍到線性權重、擊球品質、揮棒追蹤與跑壘。',
     groups: [
       { title: '傳統打擊', items: ['AVG', 'OBP', 'SLG', 'ISO', 'OPS', 'OPS+', 'BB%', 'K%', 'BB-K'] },
       { title: '線性權重與綜合進攻', items: ['wOBA', 'wRAA', 'wRC+', 'Off'] },
+      { title: '本壘板紀律', items: ['O-Swing%', 'Z-Swing%', 'Swing%', 'O-Contact%', 'Z-Contact%', 'Contact%'] },
       { title: '擊球型態與品質', items: ['BABIP', 'GB%', 'LD%', 'FB%', 'IFFB%', 'Pull%', 'Cent%', 'Oppo%', 'Soft%', 'Med%', 'Hard%'] },
       { title: 'Statcast 擊球與預期數據', items: ['BBE', 'Exit-Velocity', 'Launch-Angle', 'Hard-Hit-Rate', 'Sweet-Spot', 'Barrel', 'Hit-Distance', 'Projected-HR-Distance', 'xBA', 'xSLG', 'xwOBA'] },
       { title: '揮棒追蹤（Bat Tracking）', items: ['Bat-Speed', 'Fast-Swing-Rate', 'Squared-Up-Rate', 'Blasts', 'Swing-Length', 'Swing-Path-Tilt', 'Attack-Angle', 'Ideal-Attack-Angle', 'Attack-Direction', 'Intercept-Point', 'Batting-Stance'] },
       { title: '跑壘', items: ['BsR', 'wSB', 'UBR', 'wGDP', 'Spd', 'Sprint-Speed', 'Bolt', 'Home-to-First', '90-Foot-Running-Splits', 'Lead-Distance', 'Baserunning-Throwing-Value'] },
     ],
-    cross: ['HR-FB'],
+    cross: ['Zone%', 'F-Strike%', 'SwStr%', 'HR-FB'],
     further: ['concepts/Batted-Ball-Profile', 'concepts/Plate-Discipline', 'concepts/Bat-Tracking'],
   },
   {
@@ -61,5 +63,6 @@ export const WIDGETS = {
   'pitcher-calc': ['ERA', 'WHIP', 'K-9', 'BB-9', 'FIP', 'xFIP', 'LOB%'],
   'barrel-chart': ['Barrel', 'Exit-Velocity', 'Launch-Angle', 'Hard-Hit-Rate', 'Sweet-Spot'],
   'blast-chart': ['Blasts', 'Squared-Up-Rate', 'Bat-Speed', 'Fast-Swing-Rate'],
+  'pd-calc': ['O-Swing%', 'Z-Swing%', 'Swing%', 'O-Contact%', 'Z-Contact%', 'Contact%', 'Zone%', 'F-Strike%', 'SwStr%'],
 };
-export const WIDGET_KIND = { 'hitter-calc': 'calc', 'pitcher-calc': 'calc', 'barrel-chart': 'chart', 'blast-chart': 'chart' };
+export const WIDGET_KIND = { 'hitter-calc': 'calc', 'pitcher-calc': 'calc', 'barrel-chart': 'chart', 'blast-chart': 'chart', 'pd-calc': 'calc' };
